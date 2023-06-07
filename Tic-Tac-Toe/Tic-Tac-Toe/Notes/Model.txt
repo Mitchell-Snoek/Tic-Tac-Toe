@@ -1,0 +1,11 @@
+models
+
+model game - algemene data
+int current - player die aan de beurt is
+int scoreplayer1 - score bijhouden speler 1
+int scoreplayer2 - score bijhouden speler 2
+list buttons - data alle knoppen opslaan
+
+model button - data voor de knoppen
+string buttonvalue - voor de data x/o op te slaan in de knop
+
