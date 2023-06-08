@@ -7,7 +7,6 @@ C:\Development\Technoberg\Tic-Tac-Toe\Tic-Tac-Toe\Tic-Tac-Toe\Tic-Tac-Toe\bin\De
 C:\Development\Technoberg\Tic-Tac-Toe\Tic-Tac-Toe\Tic-Tac-Toe\Tic-Tac-Toe\bin\Debug\net6.0\Tic-Tac-Toe.dll
 C:\Development\Technoberg\Tic-Tac-Toe\Tic-Tac-Toe\Tic-Tac-Toe\Tic-Tac-Toe\bin\Debug\net6.0\ref\Tic-Tac-Toe.dll
 C:\Development\Technoberg\Tic-Tac-Toe\Tic-Tac-Toe\Tic-Tac-Toe\Tic-Tac-Toe\bin\Debug\net6.0\Tic-Tac-Toe.pdb
-C:\Development\Technoberg\Tic-Tac-Toe\Tic-Tac-Toe\Tic-Tac-Toe\Tic-Tac-Toe\obj\Debug\net6.0\Tic-Tac-Toe.csproj.AssemblyReference.cache
 C:\Development\Technoberg\Tic-Tac-Toe\Tic-Tac-Toe\Tic-Tac-Toe\Tic-Tac-Toe\obj\Debug\net6.0\Tic-Tac-Toe.GeneratedMSBuildEditorConfig.editorconfig
 C:\Development\Technoberg\Tic-Tac-Toe\Tic-Tac-Toe\Tic-Tac-Toe\Tic-Tac-Toe\obj\Debug\net6.0\Tic-Tac-Toe.AssemblyInfoInputs.cache
 C:\Development\Technoberg\Tic-Tac-Toe\Tic-Tac-Toe\Tic-Tac-Toe\Tic-Tac-Toe\obj\Debug\net6.0\Tic-Tac-Toe.AssemblyInfo.cs
@@ -24,3 +23,4 @@ C:\Development\Technoberg\Tic-Tac-Toe\Tic-Tac-Toe\Tic-Tac-Toe\Tic-Tac-Toe\obj\De
 C:\Development\Technoberg\Tic-Tac-Toe\Tic-Tac-Toe\Tic-Tac-Toe\Tic-Tac-Toe\obj\Debug\net6.0\ref\Tic-Tac-Toe.dll
 C:\Development\Technoberg\Tic-Tac-Toe\Tic-Tac-Toe\Tic-Tac-Toe\Tic-Tac-Toe\obj\Debug\net6.0\Tic-Tac-Toe.pdb
 C:\Development\Technoberg\Tic-Tac-Toe\Tic-Tac-Toe\Tic-Tac-Toe\Tic-Tac-Toe\obj\Debug\net6.0\Tic-Tac-Toe.genruntimeconfig.cache
+C:\Development\Technoberg\Tic-Tac-Toe\Tic-Tac-Toe\Tic-Tac-Toe\Tic-Tac-Toe\obj\Debug\net6.0\Tic-Tac-Toe.csproj.AssemblyReference.cache

@@ -1,27 +1,28 @@
-﻿@model Tic_Tac_Toe.Models.IndexModel
-@{
-    ViewData["Title"] = "Home Page";
-}
+﻿@model Tic_Tac_Toe.Models.Game
+
 
 <div class="text-center">
     <h1 class="display-4">Welcome</h1>
     <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
 </div>
 
+
+
+
 <table style="align-self:center;">
     <tr>
-        <td style="background:red; width:100px; height:100px; text-align:center; border:groove;"><a href="Home/Index"><div style="width:100px; height:100px;"></div></a></td>
-        <td style="background:red; width:100px; height:100px; text-align:center; border:groove;"><a href="Home/Index"><div style="width:100px; height:100px;"></div></a></td>
-        <td style="background:red; width:100px; height:100px; text-align:center; border:groove;"><a href="Home/Index"><div style="width:100px; height:100px;"></div></a></td>
+        <td style="background:red; width:100px; height:100px; text-align:center; border:groove;"><a asp-action="Button1Pressed"><div style="width:100px; height:100px;"><p>@Model.Buttons[0].ButtonValue</p></div></a></td>
+        <td style="background:red; width:100px; height:100px; text-align:center; border:groove;"><a asp-action="Button2Pressed"><div style="width:100px; height:100px;"><p>@Model.Buttons[1].ButtonValue</p></div></a></td>
+        <td style="background:red; width:100px; height:100px; text-align:center; border:groove;"><a asp-action="Button3Pressed"><div style="width:100px; height:100px;"><p>@Model.Buttons[2].ButtonValue</p></div></a></td>
     </tr>
     <tr>
-        <td style="background:red; width:100px; height:100px; text-align:center; border:groove;"><a href="Home/Index"><div style="width:100px; height:100px;"></div></a></td>
-        <td style="background:red; width:100px; height:100px; text-align:center; border:groove;"><a href="Home/Index"><div style="width:100px; height:100px;"></div></a></td>
-        <td style="background:red; width:100px; height:100px; text-align:center; border:groove;"><a href="Home/Index"><div style="width:100px; height:100px;"></div></a></td>
+        <td style="background:red; width:100px; height:100px; text-align:center; border:groove;"><a asp-action="Button4Pressed"><div style="width:100px; height:100px;"><p>@Model.Buttons[3].ButtonValue</p></div></a></td>
+        <td style="background:red; width:100px; height:100px; text-align:center; border:groove;"><a asp-action="Button5Pressed"><div style="width:100px; height:100px;"><p>@Model.Buttons[4].ButtonValue</p></div></a></td>
+        <td style="background:red; width:100px; height:100px; text-align:center; border:groove;"><a asp-action="Button6Pressed"><div style="width:100px; height:100px;"><p>@Model.Buttons[5].ButtonValue</p></div></a></td>
     </tr>
     <tr>
-        <td style="background:red; width:100px; height:100px; text-align:center; border:groove;"><a href="Home/Index"><div style="width:100px; height:100px;"></div></a></td>
-        <td style="background:red; width:100px; height:100px; text-align:center; border:groove;"><a href="Home/Index"><div style="width:100px; height:100px;"></div></a></td>
-        <td style="background:red; width:100px; height:100px; text-align:center; border:groove;"><a href="Home/Index"><div style="width:100px; height:100px;"></div></a></td>
+        <td style="background:red; width:100px; height:100px; text-align:center; border:groove;"><a asp-action="Button7Pressed"><div style="width:100px; height:100px;"><p>@Model.Buttons[6].ButtonValue</p></div></a></td>
+        <td style="background:red; width:100px; height:100px; text-align:center; border:groove;"><a asp-action="Button8Pressed"><div style="width:100px; height:100px;"><p>@Model.Buttons[7].ButtonValue</p></div></a></td>
+        <td style="background:red; width:100px; height:100px; text-align:center; border:groove;"><a asp-action="Button9Pressed"><div style="width:100px; height:100px;"><p>@Model.Buttons[8].ButtonValue</p></div></a></td>
     </tr>
 </table>
