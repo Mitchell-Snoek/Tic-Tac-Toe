@@ -105,16 +105,131 @@ namespace Tic_Tac_Toe.Controllers
             }
             var ButtonModel = new Button();
             ButtonModel.ButtonValue = val;
-
-            GameModel.Buttons[buttonpressed - 1] = ButtonModel;
+            if (GameModel.Buttons[buttonpressed-1].ButtonValue == " ")
+            {
+                GameModel.Buttons[buttonpressed - 1] = ButtonModel;
+            }
+            else
+            {
+                return RedirectToAction(nameof(Index));
+            }
 
             GameModel.CurrentPlayer += 1;
-            return RedirectToAction(nameof(Index));
-            //return CheckWin();
+            return CheckWin();
         }
 
         public IActionResult CheckWin()
         {
+            var GameModel = Game.GetInstance();
+            string won = "false";
+            bool draw = false;
+            //check wins
+            //check X
+            //horizontaal
+            if (GameModel.Buttons[0].ButtonValue == "X" && GameModel.Buttons[1].ButtonValue == "X" && GameModel.Buttons[2].ButtonValue == "X")
+            {
+                won = "X";
+            }
+            if (GameModel.Buttons[3].ButtonValue == "X" && GameModel.Buttons[4].ButtonValue == "X" && GameModel.Buttons[5].ButtonValue == "X")
+            {
+                won = "X";
+            }
+            if (GameModel.Buttons[6].ButtonValue == "X" && GameModel.Buttons[7].ButtonValue == "X" && GameModel.Buttons[8].ButtonValue == "X")
+            {
+                won = "X";
+            }
+            //verticaal
+            if (GameModel.Buttons[0].ButtonValue == "X" && GameModel.Buttons[3].ButtonValue == "X" && GameModel.Buttons[6].ButtonValue == "X")
+            {
+                won = "X";
+            }
+            if (GameModel.Buttons[1].ButtonValue == "X" && GameModel.Buttons[4].ButtonValue == "X" && GameModel.Buttons[7].ButtonValue == "X")
+            {
+                won = "X";
+            }
+            if (GameModel.Buttons[2].ButtonValue == "X" && GameModel.Buttons[5].ButtonValue == "X" && GameModel.Buttons[8].ButtonValue == "X")
+            {
+                won = "X";
+            }
+            //schuin
+            if (GameModel.Buttons[0].ButtonValue == "X" && GameModel.Buttons[4].ButtonValue == "X" && GameModel.Buttons[8].ButtonValue == "X")
+            {
+                won = "X";
+            }
+            if (GameModel.Buttons[2].ButtonValue == "X" && GameModel.Buttons[4].ButtonValue == "X" && GameModel.Buttons[6].ButtonValue == "X")
+            {
+                won = "X";
+            }
+
+            //check O
+            //horizontaal
+            if (GameModel.Buttons[0].ButtonValue == "O" && GameModel.Buttons[1].ButtonValue == "O" && GameModel.Buttons[2].ButtonValue == "O")
+            {
+                won = "O";
+            }
+            if (GameModel.Buttons[3].ButtonValue == "O" && GameModel.Buttons[4].ButtonValue == "O" && GameModel.Buttons[5].ButtonValue == "O")
+            {
+                won = "O";
+            }
+            if (GameModel.Buttons[6].ButtonValue == "O" && GameModel.Buttons[7].ButtonValue == "O" && GameModel.Buttons[8].ButtonValue == "O")
+            {
+                won = "O";
+            }
+            //verticaal
+            if (GameModel.Buttons[0].ButtonValue == "O" && GameModel.Buttons[3].ButtonValue == "O" && GameModel.Buttons[6].ButtonValue == "O")
+            {
+                won = "O";
+            }
+            if (GameModel.Buttons[1].ButtonValue == "O" && GameModel.Buttons[4].ButtonValue == "O" && GameModel.Buttons[7].ButtonValue == "O")
+            {
+                won = "O";
+            }
+            if (GameModel.Buttons[2].ButtonValue == "O" && GameModel.Buttons[5].ButtonValue == "O" && GameModel.Buttons[8].ButtonValue == "O")
+            {
+                won = "O";
+            }
+            //schuin
+            if (GameModel.Buttons[0].ButtonValue == "O" && GameModel.Buttons[4].ButtonValue == "O" && GameModel.Buttons[8].ButtonValue == "O")
+            {
+                won = "O";
+            }
+            if (GameModel.Buttons[2].ButtonValue == "O" && GameModel.Buttons[4].ButtonValue == "O" && GameModel.Buttons[6].ButtonValue == "O")
+            {
+                won = "O";
+            }
+
+            if (won == "false" && GameModel.CurrentPlayer == 9)
+            {
+                draw = true;
+            }
+
+            if (won == "X")
+            {
+                GameModel.ScorePlayerX += 1;
+                return ResetBoard();
+            }
+            else if (won == "O")
+            {
+                GameModel.ScorePlayerO += 1;
+                return ResetBoard();
+            }
+            else if (draw == true)
+            {
+                return ResetBoard();
+            }
+
+            return RedirectToAction(nameof(Index));
+        }
+
+        public IActionResult ResetBoard()
+        {
+            var GameModel = Game.GetInstance();
+            GameModel.CurrentPlayer = 0;
+            for (int i = 0; i <= 8; i++)
+            {
+                GameModel.Buttons[i] = new Button();
+            }
+            
             return RedirectToAction(nameof(Index));
         }
 
