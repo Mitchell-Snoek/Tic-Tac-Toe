@@ -13,19 +13,15 @@ namespace Tic_Tac_Toe.Models
             return _game;
         }
 
-
-
         public int CurrentPlayer { get; set; }
         public int ScorePlayerX { get; set; }
         public int ScorePlayerO { get; set; }
         public List<Button> Buttons { get; set; }
 
-
         public Game()
         {
             Buttons = new List<Button>();
         }
-
     }
     public class Button
     {

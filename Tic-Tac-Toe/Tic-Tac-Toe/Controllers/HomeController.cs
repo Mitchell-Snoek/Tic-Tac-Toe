@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
 using Tic_Tac_Toe.Models;
+using System.Windows;
 
 namespace Tic_Tac_Toe.Controllers
 {
@@ -36,7 +37,6 @@ namespace Tic_Tac_Toe.Controllers
 
             return View(GameModel);
         }
-
 
         public IActionResult Button1Pressed()
         {
@@ -123,86 +123,50 @@ namespace Tic_Tac_Toe.Controllers
             var GameModel = Game.GetInstance();
             string won = "false";
             bool draw = false;
-            //check wins
-            //check X
-            //horizontaal
-            if (GameModel.Buttons[0].ButtonValue == "X" && GameModel.Buttons[1].ButtonValue == "X" && GameModel.Buttons[2].ButtonValue == "X")
-            {
-                won = "X";
-            }
-            if (GameModel.Buttons[3].ButtonValue == "X" && GameModel.Buttons[4].ButtonValue == "X" && GameModel.Buttons[5].ButtonValue == "X")
-            {
-                won = "X";
-            }
-            if (GameModel.Buttons[6].ButtonValue == "X" && GameModel.Buttons[7].ButtonValue == "X" && GameModel.Buttons[8].ButtonValue == "X")
-            {
-                won = "X";
-            }
-            //verticaal
-            if (GameModel.Buttons[0].ButtonValue == "X" && GameModel.Buttons[3].ButtonValue == "X" && GameModel.Buttons[6].ButtonValue == "X")
-            {
-                won = "X";
-            }
-            if (GameModel.Buttons[1].ButtonValue == "X" && GameModel.Buttons[4].ButtonValue == "X" && GameModel.Buttons[7].ButtonValue == "X")
-            {
-                won = "X";
-            }
-            if (GameModel.Buttons[2].ButtonValue == "X" && GameModel.Buttons[5].ButtonValue == "X" && GameModel.Buttons[8].ButtonValue == "X")
-            {
-                won = "X";
-            }
-            //schuin
-            if (GameModel.Buttons[0].ButtonValue == "X" && GameModel.Buttons[4].ButtonValue == "X" && GameModel.Buttons[8].ButtonValue == "X")
-            {
-                won = "X";
-            }
-            if (GameModel.Buttons[2].ButtonValue == "X" && GameModel.Buttons[4].ButtonValue == "X" && GameModel.Buttons[6].ButtonValue == "X")
-            {
-                won = "X";
-            }
 
-            //check O
-            //horizontaal
-            if (GameModel.Buttons[0].ButtonValue == "O" && GameModel.Buttons[1].ButtonValue == "O" && GameModel.Buttons[2].ButtonValue == "O")
+            //check wins
+            string value = "X";
+            for (int j = 0; j <= 1; j++)
             {
-                won = "O";
-            }
-            if (GameModel.Buttons[3].ButtonValue == "O" && GameModel.Buttons[4].ButtonValue == "O" && GameModel.Buttons[5].ButtonValue == "O")
-            {
-                won = "O";
-            }
-            if (GameModel.Buttons[6].ButtonValue == "O" && GameModel.Buttons[7].ButtonValue == "O" && GameModel.Buttons[8].ButtonValue == "O")
-            {
-                won = "O";
-            }
-            //verticaal
-            if (GameModel.Buttons[0].ButtonValue == "O" && GameModel.Buttons[3].ButtonValue == "O" && GameModel.Buttons[6].ButtonValue == "O")
-            {
-                won = "O";
-            }
-            if (GameModel.Buttons[1].ButtonValue == "O" && GameModel.Buttons[4].ButtonValue == "O" && GameModel.Buttons[7].ButtonValue == "O")
-            {
-                won = "O";
-            }
-            if (GameModel.Buttons[2].ButtonValue == "O" && GameModel.Buttons[5].ButtonValue == "O" && GameModel.Buttons[8].ButtonValue == "O")
-            {
-                won = "O";
-            }
-            //schuin
-            if (GameModel.Buttons[0].ButtonValue == "O" && GameModel.Buttons[4].ButtonValue == "O" && GameModel.Buttons[8].ButtonValue == "O")
-            {
-                won = "O";
-            }
-            if (GameModel.Buttons[2].ButtonValue == "O" && GameModel.Buttons[4].ButtonValue == "O" && GameModel.Buttons[6].ButtonValue == "O")
-            {
-                won = "O";
+                if (j ==0)
+                {
+                    value = "X";
+                }
+                if (j == 1)
+                {
+                    value = "O";
+                }
+                //horizontaal
+                for (int i = 0; i <= 6; i += 3)
+                {
+                    if (GameModel.Buttons[i].ButtonValue == value && GameModel.Buttons[i+1].ButtonValue == value && GameModel.Buttons[i+2].ButtonValue == value)
+                    {
+                        won = value;
+                    }
+                }
+                //verticaal
+                for (int i = 0; i <= 2; i++)
+                {
+                    if (GameModel.Buttons[i].ButtonValue == value && GameModel.Buttons[i+3].ButtonValue == value && GameModel.Buttons[i+6].ButtonValue == value)
+                    {
+                        won = value;
+                    }
+                }
+                //schuin
+                if (GameModel.Buttons[0].ButtonValue == value && GameModel.Buttons[4].ButtonValue == value && GameModel.Buttons[8].ButtonValue == value)
+                {
+                    won = value;
+                }
+                if (GameModel.Buttons[2].ButtonValue == value && GameModel.Buttons[4].ButtonValue == value && GameModel.Buttons[6].ButtonValue == value)
+                {
+                    won = value;
+                }
             }
 
             if (won == "false" && GameModel.CurrentPlayer == 9)
             {
                 draw = true;
             }
-
             if (won == "X")
             {
                 GameModel.ScorePlayerX += 1;
