@@ -1,0 +1,33 @@
+﻿table {
+    margin: auto;
+}
+td {
+    background: white;
+    width: 100px;
+    height: 100px;
+}
+a {
+    text-decoration-line: none;
+}
+div {
+    color: black;
+    text-align-last: center;
+}
+.buttons {
+    width: 100px;
+    height: 100px;
+}
+.bigtext {
+    font-size: x-large;
+    margin-bottom: 0;
+}
+.borderRB {
+    border-bottom: double;
+    border-right: double;
+}
+.borderB {
+    border-bottom: double;
+}
+.borderR {
+    border-right: double;
+}

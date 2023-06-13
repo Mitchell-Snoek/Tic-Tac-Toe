@@ -170,15 +170,18 @@ namespace Tic_Tac_Toe.Controllers
             if (won == "X")
             {
                 GameModel.ScorePlayerX += 1;
+                GameModel.PlayerWon = "Player X has won";
                 return ResetBoard();
             }
             else if (won == "O")
             {
                 GameModel.ScorePlayerO += 1;
+                GameModel.PlayerWon = "Player O has won";
                 return ResetBoard();
             }
             else if (draw == true)
             {
+                GameModel.PlayerWon = "Draw";
                 return ResetBoard();
             }
 
@@ -193,13 +196,15 @@ namespace Tic_Tac_Toe.Controllers
             {
                 GameModel.Buttons[i] = new Button();
             }
-            
+            GameModel.Hidden = "";
             return RedirectToAction(nameof(Index));
         }
 
-        public IActionResult Privacy()
+        public IActionResult CloseAlert()
         {
-            return View();
+            var GameModel = Game.GetInstance();
+            GameModel.Hidden = "hidden";
+            return RedirectToAction(nameof(Index));
         }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]

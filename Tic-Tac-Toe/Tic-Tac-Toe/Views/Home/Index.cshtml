@@ -1,28 +1,90 @@
 ﻿@model Tic_Tac_Toe.Models.Game
 
-
 <div class="text-center">
-    <h1 class="display-4">Welcome</h1>
+    <h1 class="display-4">Tic Tac Toe</h1>
 </div>
 
 
 <p>score player O - @Model.ScorePlayerO</p>
 <p>score player X - @Model.ScorePlayerX</p>
 
+
+<div @Model.Hidden class="alert alert-success alert-dismissible fade show" role="alert">
+    <p>@Model.PlayerWon</p>
+    @using (Html.BeginForm("CloseAlert", "", FormMethod.Post))
+    {
+        <input type="submit" value="Close">
+    }
+</div>
+
 <table>
     <tr>
-        <td style="background:white; width:100px; height:100px; text-align:center; border-bottom:double; border-right:double;"><a asp-action="Button1Pressed" style="text-decoration-line:none;"><div style="width:100px; height:100px; color:black;"><p style="font-size: x-large;">@Model.Buttons[0].ButtonValue</p></div></a></td>
-        <td style="background:white; width:100px; height:100px; text-align:center; border-bottom:double; border-right:double;"><a asp-action="Button2Pressed" style="text-decoration-line:none;"><div style="width:100px; height:100px; color:black;"><p style="font-size: x-large;">@Model.Buttons[1].ButtonValue</p></div></a></td>
-        <td style="background:white; width:100px; height:100px; text-align:center; border-bottom:double;;"><a asp-action="Button3Pressed" style="text-decoration-line:none;"><div style="width:100px; height:100px; color:black;"><p style="font-size: x-large;">@Model.Buttons[2].ButtonValue</p></div></a></td>
+        <td class="borderRB" align="center" >
+            <a asp-action="Button1Pressed">
+                <div class="buttons">
+                    <p class="bigtext">@Model.Buttons[0].ButtonValue</p>
+                </div>
+            </a>
+        </td>
+        <td class="borderRB">
+            <a asp-action="Button2Pressed">
+                <div class="buttons">
+                    <p class="bigtext">@Model.Buttons[1].ButtonValue</p>
+                </div>
+            </a>
+        </td>
+        <td  class="borderB">
+            <a asp-action="Button3Pressed">
+                <div class="buttons">
+                    <p class="bigtext">@Model.Buttons[2].ButtonValue</p>
+                </div>
+            </a>
+        </td>
     </tr>
     <tr>
-        <td style="background:white; width:100px; height:100px; text-align:center; border-bottom:double; border-right:double;"><a asp-action="Button4Pressed" style="text-decoration-line:none;"><div style="width:100px; height:100px; color:black;"><p style="font-size: x-large;">@Model.Buttons[3].ButtonValue</p></div></a></td>
-        <td style="background:white; width:100px; height:100px; text-align:center; border-bottom:double; border-right:double;"><a asp-action="Button5Pressed" style="text-decoration-line:none;"><div style="width:100px; height:100px; color:black;"><p style="font-size: x-large;">@Model.Buttons[4].ButtonValue</p></div></a></td>
-        <td style="background:white; width:100px; height:100px; text-align:center; border-bottom:double;"><a asp-action="Button6Pressed" style="text-decoration-line:none;"><div style="width:100px; height:100px; color:black;"><p style="font-size: x-large;">@Model.Buttons[5].ButtonValue</p></div></a></td>
+        <td class="borderRB">
+            <a asp-action="Button4Pressed">
+                <div class="buttons">
+                    <p class="bigtext">@Model.Buttons[3].ButtonValue</p>
+                </div>
+            </a>
+        </td>
+        <td class="borderRB">
+            <a asp-action="Button5Pressed">
+                <div class="buttons">
+                    <p class="bigtext">@Model.Buttons[4].ButtonValue</p>
+                </div>
+            </a>
+        </td>
+        <td class="borderB">
+            <a asp-action="Button6Pressed">
+                <div class="buttons">
+                    <p class="bigtext">@Model.Buttons[5].ButtonValue</p>
+                </div>
+            </a>
+        </td>
     </tr>
     <tr>
-        <td style="background:white; width:100px; height:100px; text-align:center; border-right:double;"><a asp-action="Button7Pressed" style="text-decoration-line:none;"><div style="width:100px; height:100px; color:black;"><p style="font-size: x-large;">@Model.Buttons[6].ButtonValue</p></div></a></td>
-        <td style="background:white; width:100px; height:100px; text-align:center; border-right:double;"><a asp-action="Button8Pressed" style="text-decoration-line:none;"><div style="width:100px; height:100px; color:black;"><p style="font-size: x-large;">@Model.Buttons[7].ButtonValue</p></div></a></td>
-        <td style="background:white; width:100px; height:100px; text-align:center;"><a asp-action="Button9Pressed" style="text-decoration-line:none;"><div style="width:100px; height:100px; color:black;"><p style="font-size: x-large;">@Model.Buttons[8].ButtonValue</p></div></a></td>
+        <td class="borderR">
+            <a asp-action="Button7Pressed">
+                <div class="buttons">
+                    <p class="bigtext">@Model.Buttons[6].ButtonValue</p>
+                </div>
+            </a>
+        </td>
+        <td class="borderR">
+            <a asp-action="Button8Pressed">
+                <div class="buttons">
+                    <p class="bigtext">@Model.Buttons[7].ButtonValue</p>
+                </div>
+            </a>
+        </td>
+        <td>
+            <a asp-action="Button9Pressed">
+                <div class="buttons">
+                    <p class="bigtext">@Model.Buttons[8].ButtonValue</p>
+                </div>
+            </a>
+        </td>
     </tr>
 </table>

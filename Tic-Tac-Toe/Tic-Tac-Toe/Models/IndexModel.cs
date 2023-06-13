@@ -14,6 +14,8 @@ namespace Tic_Tac_Toe.Models
         }
 
         public int CurrentPlayer { get; set; }
+        public string Hidden { get; set; }
+        public string PlayerWon { get; set; }
         public int ScorePlayerX { get; set; }
         public int ScorePlayerO { get; set; }
         public List<Button> Buttons { get; set; }
@@ -21,6 +23,8 @@ namespace Tic_Tac_Toe.Models
         public Game()
         {
             Buttons = new List<Button>();
+            Hidden = "Hidden";
+            PlayerWon = "";
         }
     }
     public class Button

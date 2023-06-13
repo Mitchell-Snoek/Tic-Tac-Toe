@@ -7,4 +7,12 @@
     <RootNamespace>Tic_Tac_Toe</RootNamespace>
   </PropertyGroup>
 
+  <ItemGroup>
+    <Content Remove="wwwroot\css\Index.css" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="wwwroot\css\Index.css" />
+  </ItemGroup>
+
 </Project>
